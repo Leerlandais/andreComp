@@ -1,3 +1,17 @@
 body {
-    background-color: #f4d292;
+    background: hsla(197, 14%, 57%, 1);
+    background: linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background: -webkit-linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background-repeat: repeat-x;
+    height: 100vh;
+    text-align: center;
+    }
+
+fieldset {
+    width: 50%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
 }
