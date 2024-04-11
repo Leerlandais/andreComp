@@ -14,18 +14,18 @@ if(isset($_POST["comp_inp"])) {
     $addComp = addNewCompany($db, $_POST["comp_inp"]);  
 }
 
-if(isset($_POST["inpJan"]) && 
-    isset($_POST["inpFeb"]) && 
-    isset($_POST["inpMar"]) && 
-    isset($_POST["inpApr"]) && 
-    isset($_POST["inpMay"]) && 
-    isset($_POST["inpJun"]) && 
-    isset($_POST["inpJul"]) && 
-    isset($_POST["inpAug"]) && 
-    isset($_POST["inpSep"]) && 
-    isset($_POST["inpOct"]) && 
-    isset($_POST["inpNov"]) &&
-    isset($_POST["inpDec"]))
+if(isset($_POST["inc_jan"]) && 
+    isset($_POST["inc_feb"]) && 
+    isset($_POST["inc_mar"]) && 
+    isset($_POST["inc_apr"]) && 
+    isset($_POST["inc_may"]) && 
+    isset($_POST["inc_jun"]) && 
+    isset($_POST["inc_jul"]) && 
+    isset($_POST["inc_aug"]) && 
+    isset($_POST["inc_sep"]) && 
+    isset($_POST["inc_oct"]) && 
+    isset($_POST["inc_nov"]) &&
+    isset($_POST["inc_dec"]))
     {
         $cleanedInputs = array();
         foreach ($_POST as $input => $amount) {
@@ -33,9 +33,27 @@ if(isset($_POST["inpJan"]) &&
     $cleanedInputs[$input] = htmlspecialchars(strip_tags(trim($amount)), ENT_QUOTES);
 }
     var_dump($cleanedInputs);
-    }
 
-    // figure out how to unArray the inputs and send them to function
+    $sqlQueries = [];
+        foreach ($cleanedInputs as $input => $amount) {
+        $sql = "INSERT INTO income ($input) VALUES $amount";
+        $sqlQueries[] = $sql;
+        $stmt = $db->prepare($sql);
+        try {
+            $stmt->execute();
+            $db->commit();
+            return true;
+        } catch (PDOException $e) {
+            error_log("Error adding incomes: " . $e->getMessage());
+            return false;
+        } 
+    }
+        }
+   
+
+
+
+
 
 $db = null;
 include "../view/mainView.php";

@@ -40,30 +40,30 @@
             ?>
             <h2><?=$_POST["comp_inp"]?> added. Add their income for the year by month</h2>
             <form action="" method="POST">
-                <label for="inpJan">Jan</label>
-                    <input type="text" name="inpJan" id="">
-                <label for="inpFeb">Feb</label>
-                    <input type="text" name="inpFeb" id="">
-                <label for="inpMar">Mar</label>
-                    <input type="text" name="inpMar" id="">
-                <label for="inpApr">Apr</label>
-                    <input type="text" name="inpApr" id="">
-                <label for="inpMay">May</label>
-                    <input type="text" name="inpMay" id="">
-                <label for="inpJun">Jun</label>
-                    <input type="text" name="inpJun" id="">
-                <label for="inpJul">Jul</label>
-                    <input type="text" name="inpJul" id="">
-                <label for="inpAug">Aug</label>
-                    <input type="text" name="inpAug" id="">
-                <label for="inpSep">Sep</label>
-                    <input type="text" name="inpSep" id="">
-                <label for="inpOct">Oct</label>
-                    <input type="text" name="inpOct" id="">
-                <label for="inpNov">Nov</label>
-                    <input type="text" name="inpNov" id="">
-                <label for="inpDec">Dec</label>
-                    <input type="text" name="inpDec" id="">
+                <label for="inc_jan">Jan</label>
+                    <input type="text" name="inc_jan" id="">
+                <label for="inc_feb">Feb</label>
+                    <input type="text" name="inc_feb" id="">
+                <label for="inc_mar">Mar</label>
+                    <input type="text" name="inc_mar" id="">
+                <label for="inc_apr">Apr</label>
+                    <input type="text" name="inc_apr" id="">
+                <label for="inc_may">May</label>
+                    <input type="text" name="inc_may" id="">
+                <label for="inc_jun">Jun</label>
+                    <input type="text" name="inc_jun" id="">
+                <label for="inc_jul">Jul</label>
+                    <input type="text" name="inc_jul" id="">
+                <label for="inc_aug">Aug</label>
+                    <input type="text" name="inc_aug" id="">
+                <label for="inc_sep">Sep</label>
+                    <input type="text" name="inc_sep" id="">
+                <label for="inc_oct">Oct</label>
+                    <input type="text" name="inc_oct" id="">
+                <label for="inc_nov">Nov</label>
+                    <input type="text" name="inc_nov" id="">
+                <label for="inc_dec">Dec</label>
+                    <input type="text" name="inc_dec" id="">
                     <button type="submit">Add Incomes</button>
             </form>
             <?php
