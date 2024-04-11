@@ -35,5 +35,7 @@ if(isset($_POST["inpJan"]) &&
     var_dump($cleanedInputs);
     }
 
+    // figure out how to unArray the inputs and send them to function
+
 $db = null;
 include "../view/mainView.php";
