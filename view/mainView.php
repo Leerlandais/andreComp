@@ -21,12 +21,14 @@
         <?php 
         if (isset($_GET["sect"]) && $_GET["sect"] === "addComp") {
             ?>
-            <form action="" method="POST">
+            <form action="./" method="POST">
                 <label for="comp_inp">Name : </label>
                 <input type="text" name="comp_inp" id="compInpName">
+                <button type="submit">Send</button>
             </form>
             <?php
         }
+        if (isset($addComp)) : var_dump( $addComp); endif;
             ?>
     <script src="scripts/script.js"></script>
 </body>

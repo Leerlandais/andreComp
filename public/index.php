@@ -1,5 +1,6 @@
 <?php
 require_once "../config.php";
+require_once "../model/andre.model.php";
 include "../view/mainView.php";
 
 try {
@@ -7,3 +8,9 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }    
+
+
+if(isset($_POST["comp_inp"])) {
+    $addComp = addNewCompany($db, $_POST["comp_inp"]);
+   
+}

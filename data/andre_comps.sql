@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 11 avr. 2024 à 15:44
+-- Généré le : jeu. 11 avr. 2024 à 16:10
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.2.0
 
@@ -32,7 +32,14 @@ CREATE TABLE IF NOT EXISTS `company` (
   `id_comp` int NOT NULL AUTO_INCREMENT,
   `nom_comp` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_comp`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `company`
+--
+
+INSERT INTO `company` (`id_comp`, `nom_comp`) VALUES
+(1, 'Andre Owns You');
 
 -- --------------------------------------------------------
 
@@ -43,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `company` (
 DROP TABLE IF EXISTS `comp_has_inc`;
 CREATE TABLE IF NOT EXISTS `comp_has_inc` (
   `has_comp` int UNSIGNED NOT NULL,
-  `has_id` int UNSIGNED NOT NULL,
-  PRIMARY KEY (`has_comp`,`has_id`)
+  `has_inc` int UNSIGNED NOT NULL,
+  PRIMARY KEY (`has_comp`,`has_inc`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
