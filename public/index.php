@@ -27,21 +27,22 @@ if(isset($_POST["inc_jan"]) &&
     isset($_POST["inc_nov"]) &&
     isset($_POST["inc_dec"]))
     {
-        $cleanedInputs = array();
+   
         foreach ($_POST as $input => $amount) {
     var_dump($input, $amount);
     $cleanedInputs[$input] = htmlspecialchars(strip_tags(trim($amount)), ENT_QUOTES);
 }
     var_dump($cleanedInputs);
 
-    $sqlQueries = [];
-        foreach ($cleanedInputs as $input => $amount) {
-        $sql = "INSERT INTO income ($input) VALUES $amount";
-        $sqlQueries[] = $sql;
+        foreach ($cleanedInputs as $inputs => $amounts) {
+        $sql = "INSERT INTO `income` ($inputs) VALUES  ?";
         $stmt = $db->prepare($sql);
+    
+ 
         try {
-            $stmt->execute();
-            $db->commit();
+            $stmt->execute([$amounts]);
+        //    $db->commit();
+        $stmt->closeCursor();
             return true;
         } catch (PDOException $e) {
             error_log("Error adding incomes: " . $e->getMessage());
