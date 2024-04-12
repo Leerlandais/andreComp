@@ -40,6 +40,7 @@
             ?>
             <h2><?=$_POST["comp_inp"]?> added. Add their income for the year by month</h2>
             <form action="" method="POST">
+                <input type="text" name="compName" style="display: none;" value="<?=$_POST["comp_inp"]?>">
                 <label for="inc_jan">Jan</label>
                     <input type="text" name="inc_jan" id="">
                 <label for="inc_feb">Feb</label>
@@ -68,7 +69,7 @@
             </form>
             <?php
 
-       //   var_dump($_POST["comp_inp"]); this worked
+          var_dump($_POST["comp_inp"]); 
         }
             ?>
     <script src="scripts/script.js"></script>

@@ -27,7 +27,7 @@ if(isset($_POST["inc_jan"]) &&
     isset($_POST["inc_nov"]) &&
     isset($_POST["inc_dec"]))
     {
-   
+   var_dump($_POST["compID"]);
         foreach ($_POST as $input => $amount) {
     var_dump($input, $amount);
     $cleanedInputs[$input] = htmlspecialchars(strip_tags(trim($amount)), ENT_QUOTES);
